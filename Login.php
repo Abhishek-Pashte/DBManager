@@ -29,7 +29,7 @@
                     
                     echo "
                     <script>alert('Welcome ".$row['name']." Login successfully');
-                    location.href='/DBManagerV2/Dashboard/Dashboard.php'</script>
+                    location.href='Dashboard.php'</script>
                     ";
                     // echo "
                     // <script>alert('Welcome ".$row['name']." Login successfully');";
@@ -42,11 +42,11 @@
             if($flag)
             {
                     echo "<script>alert('Invalid Credentials!!!');
-                    location.href='/DBManagerV2/Login/Login.html';</script>";
+                    location.href='/DBManager/login.html';</script>";
             }
         } else {
             echo "<script>alert('User not found !!!');
-            location.href='/DBManagerV2/Login/Login.html'</script>";
+            location.href='/DBManager/login.html'</script>";
         }
         $con->close();
     }

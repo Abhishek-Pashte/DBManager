@@ -21,11 +21,7 @@
 
         if(mysqli_query($con,$sql)){
             echo "<script> alert('Updated successfully'); 
-            location.href='/DBManagerV2/Table/TableDetails.php?userdb=$dbname&usertable=$tablename';</script>";
-
-            //Work here not getting useremail...
-
-            
+            location.href='TableDetails.php?userdb=$dbname&usertable=$tablename';</script>";
         }
         else{
             echo "Error = $con->error";

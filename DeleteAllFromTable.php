@@ -14,7 +14,7 @@
         $sql="DELETE FROM $tablename";
         if (mysqli_query($con, $sql)) {
             echo "<script type=text/javascript> alert('All Record DELETED Successfully')
-                location.href='/DBManagerV2/Table/TableDetails.php?userdb=$dbname&usertable=$tablename'</script></script>";
+                location.href='TableDetails.php?userdb=$dbname&usertable=$tablename'</script></script>";
         }
     }
 ?>

@@ -1,117 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-    <link rel="stylesheet" href="/DBManagerV2/CSS/style.css">
-    <link rel="stylesheet" href="MainStyle.css">
-    <script src="MainScript.js"></script>
-    <title>Dashboard</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+        <title>Register</title>
+    </head>
+
     <body>
-        <!-- <div class="container-fluid" id="main-conatiner" style="border: 2px solid black; width:100%; height: 100%;"></div> -->
-            <div class="container w-100 py-2 my-2" id="header">
-                <span><p class="text-center text-white" style="font-size: 50px; font-weight: 700;">DB Manager</p></span>
-                <div class="navbar-nav">
-                    <ul>
-                        <li>
-                            <div class="navbar-icon" id="home"><A href="/DBManagerV2/index.html">Home</A></div>
-                        </li>
-                        <li>
-                            <div class="navbar-icon" id="Login"><A href="/DBManagerV2/Login/Login.html">Login</A></div>
-                        </li>
-                        <li>
-                            <div class="navbar-icon" id="signup"><A href="/DBManagerV2/Signup/SignUp.html">Sign Up</A></div>
-                        </li>
-                    </ul>
+        <div class="container-fluid my-3 p-3" style="border: 2px solid black; border-radius: 5px; text-align: center;">
+            <h1>DB Manager</h1>
+        </div>
+        <div class="container-fluid my-3" style="text-align: right; font-size: large;">
+            <ul style="list-style: none; display: inline-flex;">
+                <li style="margin: 5px;"> <a href='index.html'>Home</a></li>
+                <li style="margin: 5px;"><a href='login.html'>Login</a></li>
+            </ul>
+        </div>
+        <div class="container-fluid p-3" style="border: 2px solid black;width:500px;">
+            <form action="Register.php" method="post">
+                <h3>Sign UP</h3>
+                <br>
+                <div class="form-group">
+                    <span>Username : </span>
+                    <input type="text" class="form-control" name="name" id="name"><br>
                 </div>
+                <div class="form-group">
+                    <span>Email ID : </span>
+                    <input type="text" class="form-control" name="email" id="email"><br>
+                </div>
+                <div class="form-group">
+                    <span>Password : </span>
+                    <input type="password" class="form-control" name="password" id="password"><br>
+                </div>
+                <div class="form-group">
+                    <span>Confirm Password</span>
+                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword">
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Register</button>
+            </form>
+            <div class="text-center">
+                Already have account <a href="login.html">Login</a> here.
             </div>
-            <div class="container-fluid-p-2 m-2" id="main-conatiner" style="border: 1px solid black; width:99%; height: 100%;">
-                <div class="container-fluid" style="display: flex;">
-                    <div class="conatainer w-25 p-2 m-2" id="Image">
-                        <!-- <img src="/Assets/Images/download.jpg" alt="Image" width="100%" height="100%"> -->
-                    </div>
-                    
-                    <div class="conatainer w-25 p-2 m-2" id="Image">
-                        <!-- <img src="/Assets/Images/download.jpg" alt="Image" width="100%" height="100%"> -->
-                    </div>
-                </div>
-                <hr style="height: 10px; background-color: grey; border-radius: 5px;">
-                <div class="container p-1 my-1" style="font-size: 20px; text-align: center; border: 4px solid rgba(255,255,255,0.5); border-radius: 5px;">
-                    <!-- <button class="bg-dark border-0 m-3 p-2" onclick="showCreateDB()" style="color: white; border-radius: 5px;"><span class="btn">Create Databases</span></button>
-                    <button class="bg-dark border-0 m-3 p-2" onclick="showCreateTable()" style="color: white; border-radius: 5px;"><span class="btn">Create Tables</span></button>
-                    <button class="bg-dark border-0 m-3 p-2" onclick="showReadTable()" style="color: white; border-radius: 5px;"><span class="btn">Read data from table</span></button>
-                    <button class="bg-dark border-0 m-3 p-2" onclick="showUpdateTable()" style="color: white; border-radius: 5px;"><span class="btn">Update data in table</span></button>
-                    <button class="bg-dark border-0 m-3 p-2" onclick="showDeleteTable()" style="color: white; border-radius: 5px;"><span class="btn">Delete data from table</span></button>
+        </div>
 
-                    <div class="container" style="display: flex; height:500px;">
-                        <div class="container w-50 p-2 m-2" id="sql-code" style="border: 2px solid white;">
-                            <span style="text-align: center; font-weight: 800;">SQL</span><br>
-
-                            <div id="createDB">
-                                <span class="function">
-                                    CREATE DATABASE databasename; <br>
-                                    CREATE DATABASE myFirstDatabase;
-                                </span>
-                            </div>
-
-                            <div id="createTable" style="display: none;">
-                                <span class="function">
-                                    CREATE TABLE Persons (<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;PersonID int,<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;LastName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;FirstName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Address varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;City varchar(255)<br>
-                                    );
-                                </span>
-                            </div>
-                            
-                            <div id="readTable" style="display: none;">
-                                <span class="function" style="padding-top: 3%;">
-                                    SELECT * from tableName;<br><br> SELECT * from usersTable;
-                                </span>
-                            </div>
-
-                            <div id="updateTable" style="display: none;">
-                                <span class="function">
-                                    CREATE TABLE Persons (<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;PersonID int,<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;LastName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;FirstName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Address varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;City varchar(255)<br>
-                                    );
-                                </span>
-                            </div>
-
-                            <div id="deleteTable" style="display: none;">
-                                <span class="function">
-                                    CREATE TABLE Persons (<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;PersonID int,<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;LastName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;FirstName varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;Address varchar(255),<br>
-                                        &nbsp;&nbsp;&nbsp;&nbsp;City varchar(255)<br>
-                                    );
-                                </span>
-                            </div>
-
-                        </div>
-                        <div class="container w-50 p-2 m-2" id="gui" style="border:2px solid white;">GUI
-                            <div class="container" style="width: 75%; height: 75%; border: 2px solid red;">
-                                <img src="/Assets/Images/images.jpg" alt="" srcset="">
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-            
     </body>
-    
+
 </html>

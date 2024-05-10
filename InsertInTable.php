@@ -9,15 +9,13 @@
     <title>Insert Record</title>
 </head>
 <body>
-    <!-- <div id='header'>
-        <span><p class="text-center text-white" style="font-size: 50px; font-weight: 700;">DB Manager</p></span>
-    </div>
+<div class="container-fluid my-3 p-3" style="border: 2px solid black; border-radius: 5px; text-align: center;">
+            <h1>DB Manager</h1>
+        </div>
         <div class="container-fluid p-3" style="border: 2px solid black;">
-        <h1 style='font-weight: 400;'>Insert Record in Table</h1> -->
+        <h1 style='font-weight: 400;'>Insert Record in Table</h1>
 
 <?php
-
-    echo "<link rel='stylesheet' href='/DBManagerV2/CSS/style.css'>";
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -31,13 +29,8 @@
     $get_columns->execute();
     $tableData = $get_columns->fetchAll(PDO::FETCH_ASSOC);
     // $tableData = $get_columns->fetchColumn(0);
-    echo "<div id='header'>
-            <span><p class='text-center text-white' style='font-size: 50px; font-weight: 700;'>DB Manager</p></span>
-        </div>
-    <div class='container-fluid p-3' style='border: 2px solid black;'>
-    <h1 style='font-weight: 400;'>Insert Record in Table</h1>";
-    echo "<form method='POST' action='/DBManagerV2/Table/Insert/ConfirmInsertion.php?dbname=$dbname&tablename=$tablename'>";
-    echo "<table class='table table-dark table-bordered table-striped'>";
+    echo "<form method='POST' action='ConfirmInsertion.php?dbname=$dbname&tablename=$tablename'>";
+    echo "<table class='table table-bordered table-striped'>";
 
         // Print table headers dynamically
         echo '<tr>';
@@ -49,7 +42,7 @@
         foreach ($tableData as $row) {
             echo '<tr>';
             echo '<td>'.$row['Field'].'</td>';
-            echo "<td> <input type='text' class='form-control' style='padding:2px; width:25%;' name='".$row['Field']."' placeholder='Enter data...'>";
+            echo "<td> <input type='text' class='form-group' name='".$row['Field']."'>";
             echo '</tr>';
         }
         echo "</table>";

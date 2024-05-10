@@ -26,7 +26,7 @@
         $result = $stmt->execute();
         if($result){
           echo "<script>alert('Data inserted successfully in $tablename');
-          location.href='/DBManagerV2/Table/TableDetails.php?userdb=$dbname&usertable=$tablename';</script>";
+          location.href='TableDetails.php?userdb=$dbname&usertable=$tablename';</script>";
         }
     }
   catch (PDOException $e) {

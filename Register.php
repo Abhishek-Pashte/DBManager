@@ -32,17 +32,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // if ($con->query($query) === TRUE) 
             if (mysqli_query($con, $query)) {
                 echo "<script type=text/javascript> alert('Successfully Registered')
-                    location.href='/DBManagerV2/Login/Login.html'</script></script>";
+                    location.href='login.html'</script></script>";
             } else if (mysqli_errno($con) == 1062) {
                 echo "<script type=text/javascript> alert('User already exists');
-                    location.href='/DBManagerV2/index.html'</script>";
+                    location.href='index.html'</script>";
             } else {
                 echo "Error: " . $query . "<br>" . $con->error;
             }
             $con->close();
         } else {
-            // echo "<script> alert('Enter valid data'); location.href='/DBManagerV2/SignUp/SignUp.html';</script>";
-            echo "<script>location.href='/DBManagerV2/SignUp/SignUp.html';</script>";
+            echo "<script> alert('Enter valid data'); location.href='index.html';</script>";
         }
     }
 }

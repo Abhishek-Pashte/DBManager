@@ -62,7 +62,7 @@ else{
     if(mysqli_query($con,$sql)){
         echo "Done";
         echo "<script>alert('Table created successfully!!!');
-        location.href='/DBManagerV2/Table/ShowTables.php?useremail=".$useremail."&userdb=".$dbname."';</script>";
+        location.href='ShowTables.php?userdb=$dbname';</script>";
     
     }
     else{
